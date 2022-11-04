@@ -2,8 +2,7 @@ name: staging_deployment
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "development" ]
-    
+    branches: [ "development" ]    
   workflow_dispatch:
     inputs:
       name:
@@ -14,11 +13,7 @@ on:
         description: 'location'
         required: false
         default: 'The Octoverse'
-
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-jobs:
+ jobs:
   qabuild:
     runs-on: ubuntu-latest
     steps:
