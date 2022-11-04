@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "heartfulnesstestingapp",
-      "public": "build",
+      "public": "public",
       "ignore": [
         "firebase.json",
         "**/.*",
