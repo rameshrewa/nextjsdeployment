@@ -1,15 +1,11 @@
 name: staging_deployment
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "development" ]    
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Person to greet'
-        required: true
-        default: 'Mona the Octocat'
- jobs:
+    branches:
+      - development
+  repository_dispatch:
+    types: staging_deployment
+jobs:
   qabuild:
     runs-on: ubuntu-latest
     steps:
