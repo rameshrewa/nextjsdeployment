@@ -9,10 +9,6 @@ on:
         description: 'Person to greet'
         required: true
         default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
-        default: 'The Octoverse'
  jobs:
   qabuild:
     runs-on: ubuntu-latest
