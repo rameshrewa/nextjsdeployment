@@ -1,9 +1,8 @@
 name: staging_deployment
 on:
-  push:
-    branches: [ "staging" ]
   repository_dispatch:
-    types: staging_deployment
+    types:
+      - staging_deployment
 jobs:
   qabuild:
     runs-on: ubuntu-latest
