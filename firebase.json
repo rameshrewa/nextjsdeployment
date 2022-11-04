@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "target": "heartfulnesstestingapp",
     "public": "out",
     "ignore": [
       "firebase.json",
