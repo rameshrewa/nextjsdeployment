@@ -1,8 +1,9 @@
-name: Deploy Cloud Functions
+name: staging_deployment
 on:
   push:
-    branches:
-      - development
+    branches: [ "development" ]
+  pull_request:
+    branches: [ "development" ]
   repository_dispatch:
     types: staging_deployment
 jobs:
