@@ -5,7 +5,7 @@
     "rewrites": [
       {
         "source": "**",
-        "function": "nextApp"
+        "destination": "/index.html"
       }
     ],
     "cleanUrls": true
