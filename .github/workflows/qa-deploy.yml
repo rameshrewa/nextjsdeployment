@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - development
+  repository_dispatch:
+    types: staging_deployment
 jobs:
   qabuild:
     runs-on: ubuntu-latest
