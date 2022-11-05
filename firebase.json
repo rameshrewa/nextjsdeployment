@@ -5,7 +5,7 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "server/pages/index.html"
+        "destination": "/server/pages/index.html"
       }
     ],
     "cleanUrls": true
