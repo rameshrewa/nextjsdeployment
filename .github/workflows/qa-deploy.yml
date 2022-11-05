@@ -16,16 +16,12 @@ jobs:
         run: npm install
       - name: npm run build
         run: npm run build
-      - name: Export static files
-        run: npm run export
-      - name: Add .nojekyll file
-        run: touch ./out/.nojekyll
+        env:
+          FIREBASE_SERVICE_ACCOUNT_DETAILS: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}  
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          branch: gh-pages
-          folder: out
-          args: deploy --only hosting:heartfulnesstestingapp               
+          args: deploy --only hosting:heartfulnesstestingapp     
         env:        
           PROJECT_ID: rameshtest-f25de
           GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
