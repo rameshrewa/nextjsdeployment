@@ -4,7 +4,8 @@ on:
     branches:
       - development
   repository_dispatch:
-    types: qa-deploy    
+    types: qa-deploy
+  workflow_dispatch:      
 jobs:
   qabuild:
     runs-on: ubuntu-latest
