@@ -16,7 +16,7 @@ jobs:
         run: npm install
       - name: npm run build
         run: npm run build
-       - name: Export static files
+      - name: Export static files
         run: npm run export
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
