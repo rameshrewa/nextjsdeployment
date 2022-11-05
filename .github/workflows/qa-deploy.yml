@@ -1,0 +1,30 @@
+name: Deploy Cloud Functions
+on:
+  push:
+    branches:
+      - development
+  repository_dispatch:
+    types: qa-deploy
+  workflow_dispatch:      
+jobs:
+  qabuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 16.15.1
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.15.1
+      - name: npm install
+        run: npm install
+      - name: npm run build
+        run: npm run build
+        env:
+          FIREBASE_SERVICE_ACCOUNT_DETAILS: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}  
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting:heartfulnesstestingapp     
+        env:        
+          PROJECT_ID: rameshtest-f25de
+          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
